@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CRUD operations using JSON and local storage in JavaScript</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://pagination.js.org/dist/2.1.5/pagination.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ab07a6bfb.js"></script>
+    <style>
+      .container {
+        font-size: 15px;
+        margin-top: 10px;
+      }
+      h2 {
+        margin-bottom: 10px;
+      }
+      .search {
+        font-size: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 25%;
+        left: 20px;
+      }
+      .btn-search {
+        margin-right: 5px;
+      }
+      legend {
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .abc {
+        background-color: rgb(213, 219, 224);
+      }
+
+      .paginationjs-pages ul {
+        list-style: none;
+        margin-left: 40%;
+        margin-top: 20px;
+        display: flex;
+        font-size: 16px;
+        padding: 0;
+      }
+
+      .paginationjs-pages li {
+        padding: 5px 10px;
+        margin: 0 4px;
+        border: 1px solid grey;
+      }
+
+      .paginationjs-pages a {
+        text-decoration: none;
+      }
+      .defult-page-data {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Employee Details</h1>
+      <div class="top row">
+        <div class="search input-group col-2">
+          <input
+            type="search"
+            class="form-control rounded"
+            placeholder="Type to search..."
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+          <button type="button" class="btn btn-search btn-primary">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+        <br />
+        <input type="hidden" id="current_page" />
+        <input type="hidden" id="show_per_page" />
+        <fieldset>
+          <legend>Users List</legend>
+          <table class="table">
+            <thead class="abc">
+              <tr>
+                <th>UserId</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="tblbody"></tbody>
+          </table>
+        </fieldset>
+        <div id="page_navigation"></div>
+      </div>
+    </div>
+
+    <script type="text/javascript"> </script>
+    <script src="crud.js"></script>
+    <script src="pagination.js"></script>
+  </body>
+</html>
